@@ -156,6 +156,7 @@ public class WeatherServlet extends HttpServlet {
 		
 		try {
 			String responseStr = defaultWeatherData.getDefaultWeatherData();
+			//String responseStr = defaultWeatherData.getVisibilityData();
 			response.setContentType("application/json");
 			out = response.getOutputStream();
 			out.print(responseStr.toString());

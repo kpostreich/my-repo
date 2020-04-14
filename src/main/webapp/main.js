@@ -156,8 +156,8 @@ function updateForecast(data){
         windDir.innerHTML = windDirection;
         windMPH.innerHTML = data.current_observation.wind_mph;
         windKPH.innerHTML = data.current_observation.wind_kph;
-        visMi.innerHTML = data.current_observation.visibility_mi;
-        visKm.innerHTML = data.current_observation.visibility_km;
+    //    visMi.innerHTML = data.current_observation.visibility_mi;
+    //    visKm.innerHTML = data.current_observation.visibility_km;
         container.classList.add("is-selected");
         switchWeatherImages(data);
     }
@@ -253,4 +253,4 @@ function callRESTAPI() {
         }
     };
     request.send();
-}
+} 

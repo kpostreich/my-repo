@@ -81,5 +81,54 @@ public class DefaultWeatherData {
 	    return resultStr;
 		
 	}
+		
+	public String getVisibilityData () throws IOException {		
+		
+		String dataFileName = null;
+		if (Constants.PARIS.equals(getCity())) {
+			dataFileName = "FileNotExist-parisVisibiltyWeatherData.json";
+		} else if (Constants.LAS_VEGAS.equals(getCity())) {
+			dataFileName = "lasVegasVisibilityWeatherData.json";
+		} else if (Constants.SAN_FRANCISCO.equals(getCity())) {
+			dataFileName = "sanFranciscoVisibilityWeatherData.json";
+		} else if (Constants.MIAMI.equals(getCity())) {
+			dataFileName = "miamiVisibiltyWeatherData.json";
+		} else if (Constants.CORK.equals(getCity())) {
+			dataFileName = "corkVisibiltyWeatherData.json";
+		} else if (Constants.BARCELONA.equals(getCity())) {
+			dataFileName = "barcelonaVisibiltyWeatherData.json";
+		}else {
+			throw new UnsupportedOperationException("The default weather information for the selected city: " + city + 
+					" is not provided.  Valid selections are: " + Constants.SUPPORTED_CITIES);
+					
+		} 
+		logger.log(Level.FINE, "dataFileName: " + dataFileName);
+		
+		InputStream inputStream = null;
+		
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		try {
+			inputStream = getClass().getClassLoader().getResourceAsStream(dataFileName);
+			byte[] buf = new byte[4096];
+			for (int n; 0 < (n = inputStream.read(buf));) {
+				out.write(buf, 0, n);
+			}
+		} finally {
+			out.close();
+			
+			if (inputStream != null) {
+				inputStream.close();
+			}
+			inputStream = null;
+		}
+				
+	    String resultStr = new String(out.toByteArray(), "UTF-8");
+	    logger.log(Level.FINEST, "resultStr: " + resultStr);
+	    out = null;
+	    return resultStr;
+		
+	}
+
+    
 
 }
