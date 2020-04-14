@@ -430,6 +430,8 @@
   "feelslike_string":"61.7 F (16.5 C)",
   "feelslike_f":"61.7",
   "feelslike_c":"16.5",
+  "visibility_mi":"8.5",
+	"visibility_km":"13.7",
   "solarradiation":"--",
   "UV":"7","precip_1hr_string":"-999.00 in ( 0 mm)",
   "precip_1hr_in":"-999.00",

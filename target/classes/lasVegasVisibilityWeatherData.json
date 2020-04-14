@@ -255,6 +255,8 @@
   "feelslike_string":"70.0 F (21.1 C)",
   "feelslike_f":"70.0",
   "feelslike_c":"21.1",
+  "visibility_mi":"10.0",
+	"visibility_km":"16.00",
   "solarradiation":"--",
   "UV":"0","precip_1hr_string":"0.00 in ( 0 mm)",
   "precip_1hr_in":"0.00",
