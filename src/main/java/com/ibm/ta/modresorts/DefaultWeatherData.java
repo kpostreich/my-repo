@@ -96,7 +96,7 @@ public class DefaultWeatherData {
 		} else if (Constants.CORK.equals(getCity())) {
 			dataFileName = "corkVisibiltyWeatherData.json";
 		} else if (Constants.BARCELONA.equals(getCity())) {
-			dataFileName = "barcelonaVisibiltyWeatherData.json";
+			dataFileName = "barcelonaVisibilityWeatherData.json";
 		}else {
 			throw new UnsupportedOperationException("The default weather information for the selected city: " + city + 
 					" is not provided.  Valid selections are: " + Constants.SUPPORTED_CITIES);
